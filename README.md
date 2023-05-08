@@ -76,3 +76,27 @@ mapping(string => uint256) public nameToFavoriteNumber;
 
 nameToFavoriteNumber[_name] = _favoriteNumber;
 ```
+### Contract deploying another contract
+```
+import "./SimpleStorage.sol";
+
+SimpleStorage public simpleStorage;
+
+function crateSimpleStorageContract() public {
+	simpleStorage = new SimpleStorage();
+}
+```
+### Interacting with another contract
+1.- Address
+2.- ABI
+```
+SimpleStorage simpleStorage = SimpleStorage(address)
+```
+### Inheritance
+for a function to be overridable you need to add the "virtual" keyword
+for a function to override another you need to add the "override" keyword
+```
+contract A is B {
+
+}
+```
